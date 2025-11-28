@@ -44,3 +44,32 @@ for i in range(len(matriz[i])):
 for i in range(3):
     soma_diagonal += matriz[i][i]
 print(f"A soma das diagonais: {soma_diagonal}")
+print("-----Exercício 5-----")
+produtos = []
+while True:
+  num = int(input("------Menu------\n . 1 = Adicionar um produto (Nome e Preço) a duas listas separadas ou uma lista de dicionários/tuplas.\n . 2 = Listar todos os produtos cadastrados.\n . 3 = Calcular o valor total do estoque (soma de todos os preços).\n . 0 = Sair do programa.\nDigite o que gostaria de fazer hoje: "))
+  produto = {"nome":"", "Preço":""}
+  if num == 0:
+     print("------Muito obrigado pelo sua cooperação!Volte sempre!!!------")
+     break
+  elif num == 1:
+     produto["nome"] = input("Digite o nome do produto: ")
+     produto["Preço"] = float(input("Digite o valor do produto: "))
+
+     produtos.append(produto)
+     
+     print(f'Produto {produto["nome"]} foi adicionado com sucesso!')
+  elif num == 2:
+       print("-----Lista dos produtos-----")
+       if len(produtos) == 0:
+          print("Nenhum produto foi encontrado!")
+       else:
+          for i in produtos:
+              print(f'O produto {i["nome"]} custa: R${i["Preço"]}')
+  elif num == 3:
+       total = 0
+       for i in produtos:
+            total += i["Preço"]
+       print(f"A soma de todos os preços é: R${total}")
+  else:
+     print("Opção Indisponível!")
