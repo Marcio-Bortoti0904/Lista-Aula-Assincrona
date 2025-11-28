@@ -29,3 +29,18 @@ while contador < N:
     b = c
     contador += 1
 print("\n-----Exercício 4------")
+matriz = [
+  ["", "", ""] ,
+  ["", "", ""] ,
+  ["", "", ""]
+]
+soma_diagonal = 0
+for i in range(len(matriz)):
+      for j in range(len(matriz[i])):
+           matriz[i][j] = int(input(" Elemento = "))
+print("Matriz: ")
+for i in range(len(matriz[i])):
+    print(matriz[i])
+for i in range(3):
+    soma_diagonal += matriz[i][i]
+print(f"A soma das diagonais: {soma_diagonal}")
